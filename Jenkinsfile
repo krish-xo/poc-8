@@ -3,7 +3,7 @@ pipeline {
 
   parameters {
   string defaultValue: 'first', name: 'Release_Name'
-  imageTag credentialId: 'dockerhub-pwd', defaultTag: '125', filter: '.*', image: 'rahilnawab/devops-integration', name: 'DOCKER_IMAGE', registry: 'https://registry-1.docker.io', tagOrder: 'DSC_VERSION'
+  imageTag credentialId: 'dockerhub-pwd', defaultTag: '25', filter: '.*', image: 'krishxo/jenkins-docker', name: 'DOCKER_IMAGE', registry: 'https://registry-1.docker.io', tagOrder: 'DSC_VERSION'
 }
 
   stages {
@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Checkout files'){
         steps{
-          checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CD']]])
+          checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/krish-xo/poc-8.git']]])
             }
         }
 
