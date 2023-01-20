@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Checkout files'){
         steps{
-          checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/krish-xo/poc-8.git']]])
+          checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/krish-xo/poc-8.git']]])
             }
         }
 
